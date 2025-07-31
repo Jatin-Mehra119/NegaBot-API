@@ -1,7 +1,15 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
-*.py[codz]
+*.py[cod]
 *$py.class
+
+# NegaBot specific
+*.db
+*.sqlite
+*.sqlite3
+negabot_predictions.db
+data/
+logs/
 
 # C extensions
 *.so
