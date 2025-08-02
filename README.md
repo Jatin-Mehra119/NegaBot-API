@@ -23,7 +23,7 @@ NegaBot is a complete sentiment analysis solution that detects positive and nega
 
 1. **Clone and Setup**
 ```bash
-git clone <repository-url>
+git clone https://github.com/Jatin-Mehra119/NegaBot-API.git
 cd NegaBot-API
 python -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
