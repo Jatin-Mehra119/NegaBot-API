@@ -1,6 +1,6 @@
 # NegaBot API
 
-**Tweet Sentiment Classification using SmolLM 360M V2 Model**
+**Tweet Sentiment Classification using [NegaBot Model SmolLM2-360M V2](https://github.com/Jatin-Mehra119/NegaBot-Product-Criticism-Catcher) | [Model Card](https://huggingface.co/jatinmehra/NegaBot-Product-Criticism-Catcher)**
 
 NegaBot is a complete sentiment analysis solution that detects positive and negative sentiment in tweets, particularly focusing on product criticism detection. Built with FastAPI, Streamlit, and the powerful `jatinmehra/NegaBot-Product-Criticism-Catcher` model.
 
