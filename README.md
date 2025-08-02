@@ -1,8 +1,10 @@
 <div align="center">
 
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Jatin-Mehra119/NegaBot-API)
-[Model Card](https://huggingface.co/jatinmehra/NegaBot-Product-Criticism-Catcher)
+[![Model Card](https://img.shields.io/badge/Model%20Card-NegaBot-%23FF6600?style=flat&logo=huggingface&logoColor=yellow)](https://huggingface.co/jatinmehra/NegaBot-Product-Criticism-Catcher)
+
 </div>
+
 # NegaBot API
 
 **Tweet Sentiment Classification using [NegaBot Model SmolLM2-360M V2](https://github.com/Jatin-Mehra119/NegaBot-Product-Criticism-Catcher) | [Model Card](https://huggingface.co/jatinmehra/NegaBot-Product-Criticism-Catcher)**
