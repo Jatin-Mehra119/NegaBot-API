@@ -4,7 +4,18 @@
 
 NegaBot is a complete sentiment analysis solution that detects positive and negative sentiment in tweets, particularly focusing on product criticism detection. Built with FastAPI, Streamlit, and the powerful `jatinmehra/NegaBot-Product-Criticism-Catcher` model.
 
-**Note**: This API will be deployed to production in the future for public access.
+**Note**: This API is now deployed and available for public testing!
+
+## 🚀 Live Demo
+
+**Try it now**: The API is deployed on Hugging Face Spaces and available for testing at:
+https://jatinmehra-negabot-api.hf.space/docs#/
+
+The live deployment features:
+- **Unified Interface**: Both API and dashboard accessible on a single port
+- **Interactive Documentation**: Full Swagger UI for testing endpoints
+- **Built-in Analytics**: HTML dashboard integrated with the API
+- **Ready to Use**: No setup required, just start making requests!
 
 ## Features
 
@@ -16,6 +27,25 @@ NegaBot is a complete sentiment analysis solution that detects positive and nega
 - **Visualizations**: Charts, word clouds, and trend analysis
 - **Docker Ready**: Containerized deployment ready
 - **Testing**: Demo script included
+
+## 🌐 Deployment
+
+### Hugging Face Spaces
+The API is currently deployed on Hugging Face Spaces for demo and testing purposes:
+
+**🔗 Live API**: https://jatinmehra-negabot-api.hf.space/docs#/
+
+**Key Features of the Deployment:**
+- **Single Port Architecture**: Both API endpoints and analytics dashboard run on the same port
+- **Interactive Documentation**: Full Swagger UI available for testing all endpoints
+- **Built-in Dashboard**: Analytics dashboard accessible at `/dashboard` endpoint
+- **No Setup Required**: Ready to use immediately for testing and integration
+- **Public Access**: Available for demonstration and development purposes
+
+**Deployment Differences:**
+- Unified port structure (dashboard accessible via `/dashboard` instead of separate port)
+- HTML-based dashboard instead of Streamlit (for better integration)
+- Optimized for serverless deployment on Hugging Face infrastructure
 
 ## Quick Start
 
@@ -49,7 +79,57 @@ docker run -p 8000:8000 -p 8501:8501 negabot
 
 ## Usage Examples
 
-### API Usage
+### Live API Usage (Hugging Face Deployment)
+
+#### Single Prediction
+```bash
+curl -X POST "https://jatinmehra-negabot-api.hf.space/predict" \
+     -H "Content-Type: application/json" \
+     -d '{"text": "This product is amazing! Best purchase ever!"}'
+```
+
+#### Batch Prediction
+```bash
+curl -X POST "https://jatinmehra-negabot-api.hf.space/batch_predict" \
+     -H "Content-Type: application/json" \
+     -d '{
+       "tweets": [
+         "Amazing product, highly recommend!",
+         "Terrible quality, waste of money",
+         "Its okay, nothing special"
+       ]
+     }'
+```
+
+#### Python Client Example (Live API)
+```python
+import requests
+
+# Single prediction
+response = requests.post(
+    "https://jatinmehra-negabot-api.hf.space/predict",
+    json={"text": "This product broke after one week!"}
+)
+result = response.json()
+print(f"Sentiment: {result['sentiment']} (Confidence: {result['confidence']:.2%})")
+
+# Batch prediction
+response = requests.post(
+    "https://jatinmehra-negabot-api.hf.space/batch_predict",
+    json={
+        "tweets": [
+            "Love this product!",
+            "Terrible experience",
+            "Pretty decent quality"
+        ]
+    }
+)
+results = response.json()
+for result in results['results']:
+    print(f"'{result['text']}' -> {result['sentiment']}")
+```
+
+### Local API Usage
 
 #### Single Prediction
 ```bash
@@ -163,14 +243,18 @@ for result in results:
 
 ## Dashboard Features
 
-The Streamlit dashboard provides comprehensive analytics:
+### Live Dashboard
+Access the analytics dashboard at: https://jatinmehra-negabot-api.hf.space/dashboard
+
+### Local Dashboard Features
+The built-in analytics dashboard provides comprehensive analytics:
 
 - **Real-time Metrics**: Total predictions, sentiment distribution, average confidence
-- **Trend Analysis**: Time-series charts showing sentiment trends over time
-- **Word Clouds**: Visual representation of common words in positive/negative tweets
-- **Advanced Filtering**: Filter by sentiment, date range, and search terms
+- **Interactive Charts**: Visual representation of sentiment trends and distributions
+- **Recent Predictions**: View latest prediction results with confidence scores
 - **Data Export**: Download prediction data as CSV or JSON
-- **Auto-refresh**: Optional auto-refresh for real-time monitoring
+- **Unified Interface**: Dashboard accessible through the same port as the API (for Hugging Face deployment)
+- **Auto-refresh**: Real-time updates as new predictions are made
 
 ## Testing
 
