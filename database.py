@@ -6,8 +6,7 @@ import sqlite3
 import json
 import logging
 from datetime import datetime
-from typing import List, Dict, Optional
-import os
+from typing import List, Dict
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)

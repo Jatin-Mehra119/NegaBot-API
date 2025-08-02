@@ -4,7 +4,6 @@ NegaBot Demo Script
 Demonstrates all the features of the NegaBot API
 """
 import requests
-import json
 import time
 import random
 
